@@ -14,6 +14,11 @@ document.getElementById("cadastroForm").addEventListener("submit", async functio
     form.querySelectorAll("input[name='tipo_subestacao']:checked").forEach(cb => {
       tipoSubestacao.push(cb.value);
     });
+    const formaPagamento = [];
+    form.querySelectorAll("input[name='pagamento']:checked").forEach(cb => {
+    formaPagamento.push(cb.value);
+    });
+
   
     const dadosFormulario = {
       nome_empresa: form.nome_empresa.value,
