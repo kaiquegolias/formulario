@@ -16,7 +16,7 @@ document.getElementById("cadastroForm").addEventListener("submit", async functio
   });
 
   const formaPagamento = [];
-  form.querySelectorAll("input[name='pagamento']:checked").forEach(cb => {
+  form.querySelectorAll("input[name='forma_pagamento']:checked").forEach(cb => {
     formaPagamento.push(cb.value);
   });
 
@@ -35,8 +35,10 @@ document.getElementById("cadastroForm").addEventListener("submit", async functio
     tensao_rede: form.tensao_rede.value,
     tensao_secundaria: form.tensao_secundaria.value,
     tipo_subestacao: tipoSubestacao,
-    forma_pagamento: formaPagamento // AGORA ESTÁ AQUI!
+    forma_pagamento: formaPagamento
   };
+
+  console.log("📦 Enviando:", dadosFormulario); // Verifica o que está indo
 
   try {
     const response = await fetch("http://localhost:3000/api/clientes", {
