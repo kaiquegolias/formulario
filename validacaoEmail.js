@@ -41,7 +41,7 @@ document.getElementById("cadastroForm").addEventListener("submit", async functio
   console.log("📦 Enviando:", dadosFormulario); // Verifica o que está indo
 
   try {
-    const response = await fetch("https://agilhomolog.onrender.com", {
+    const response = await fetch("https://agilhomolog.onrender.com/api/clientes", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(dadosFormulario)
